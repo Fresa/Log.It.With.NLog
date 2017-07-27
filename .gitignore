@@ -4,3 +4,4 @@ tests/Log.It.With.NLog.Tests/obj/
 tests/Log.It.With.NLog.Tests/bin/
 !tools/**
 src/Log.It.With.NLog/bin/
+.vs/

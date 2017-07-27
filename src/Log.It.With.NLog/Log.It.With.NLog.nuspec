@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://github.com/Fresa/Log.It.With.NLog/blob/master/README.md</licenseUrl>
+    <projectUrl>https://github.com/Fresa/Log.It.With.NLog</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2017 $author$</copyright>
+    <tags>Log Logging NLog</tags>
+	<dependencies>
+    </dependencies>    
+  </metadata>
+  <files>
+    <file src="bin\$configuration$\$id$*.dll" target="lib\net462"></file>
+    <file src="bin\$configuration$\$id$*.pdb" target="lib\net462"></file>
+    <file src="**\*.cs" exclude="obj\**\*.*" target="src" />
+  </files>
+</package>
