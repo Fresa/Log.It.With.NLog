@@ -1,6 +1,10 @@
 # Log.It.With.NLog
 Log.It.With.NLog is a simple logging framework for NLog based on <a href="https://github.com/Fresa/Log.It" target="_blank">Log.It</a>.
 
+[![Build status](https://ci.appveyor.com/api/projects/status/09dgsheetq6ldg9u?svg=true)](https://ci.appveyor.com/project/Fresa/log-it-with-nlog)
+
+[![Build history](https://buildstats.info/appveyor/chart/Fresa/log-it-with-nlog)](https://ci.appveyor.com/project/Fresa/log-it-with-nlog/history)
+
 ## Download
 https://www.nuget.org/packages/Log.It.With.NLog/1.0.0
 
