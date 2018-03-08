@@ -5,3 +5,4 @@ tests/Log.It.With.NLog.Tests/bin/
 !tools/**
 src/Log.It.With.NLog/bin/
 .vs/
+Log.It.With.NLog.v3.ncrunchsolution

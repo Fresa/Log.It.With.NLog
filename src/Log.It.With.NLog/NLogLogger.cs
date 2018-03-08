@@ -67,7 +67,7 @@ namespace Log.It.With.NLog
 
         public void Error(Exception ex, string msg)
         {
-            Logger.Fatal(ex, msg);
+            Logger.Error(ex, msg);
         }
 
         public void Error(string template, params object[] args)
