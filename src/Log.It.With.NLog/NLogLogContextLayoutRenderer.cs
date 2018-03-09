@@ -21,10 +21,10 @@ namespace Log.It.With.NLog
 
         protected override void Append(StringBuilder builder, LogEventInfo logEvent)
         {
-            var message = _logContext.Get<string>(Key);
+            var message = _logContext.Get<object>(Key);
             if (message != null)
             {
-                builder.AppendFormat(logEvent.FormatProvider, message);
+                builder.AppendFormat(logEvent.FormatProvider, message.ToString());
             }
         }
     }

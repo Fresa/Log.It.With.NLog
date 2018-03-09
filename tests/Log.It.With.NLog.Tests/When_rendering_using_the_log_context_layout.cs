@@ -45,7 +45,7 @@ namespace Log.It.With.NLog.Tests
 
             _logger = new NLogLogger("TestType", new LogicalThreadContext());
             _configurationObjectsCreatedAfterInstantiating = _created;
-            _logger.LogicalThread.Set("item1", "value1");
+            _logger.LogicalThread.Set("item1", new ContextObject("value1"));
 
             OnDisposing += (sender, args) => Reset();
             LogManager.Configuration = LogManager.Configuration.Reload();
@@ -78,6 +78,21 @@ namespace Log.It.With.NLog.Tests
         public void It_should_have_created_nlog_configuration_objects()
         {
             _created.Should().Be.True();
+        }
+    }
+
+    class ContextObject
+    {
+        public object Value { get; }
+
+        public ContextObject(object value)
+        {
+            Value = value;
+        }
+
+        public override string ToString()
+        {
+            return Value.ToString();
         }
     }
 }
