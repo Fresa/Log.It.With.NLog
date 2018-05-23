@@ -14,6 +14,7 @@
     <copyright>Copyright 2017 $author$</copyright>
     <tags>Log Logging NLog</tags>
 	<dependencies>
+	    <dependency id="Log.It" version="1.1.0" />
     </dependencies>    
   </metadata>
   <files>

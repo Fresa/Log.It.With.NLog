@@ -1,4 +1,5 @@
-﻿using NLog;
+﻿using System.Collections.Generic;
+using NLog;
 using NLog.Targets;
 
 namespace Log.It.With.NLog.Tests
@@ -6,18 +7,14 @@ namespace Log.It.With.NLog.Tests
     [Target("Test")]
     public sealed class TestTarget : TargetWithLayout
     {
-        private readonly IWrite _writer;
-       
-        public TestTarget(IWrite writer)
-        {
-            _writer = writer;
-        }
+        public static IReadOnlyList<string> MessagesWritten => Messages;
+        private static readonly List<string> Messages = new List<string>();
 
         protected override void Write(LogEventInfo logEvent)
         {
             var logMessage = Layout.Render(logEvent);
 
-            _writer.Write(logMessage);
+            Messages.Add(logMessage);
         }
     }
 }

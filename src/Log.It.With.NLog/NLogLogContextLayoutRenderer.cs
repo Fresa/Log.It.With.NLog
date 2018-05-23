@@ -8,12 +8,8 @@ namespace Log.It.With.NLog
     [LayoutRenderer("lc")]
     public class NLogLogContextLayoutRenderer : LayoutRenderer
     {
-        private readonly ILogContext _logContext;
-
-        public NLogLogContextLayoutRenderer(ILogContext logContext)
-        {
-            _logContext = logContext;
-        }
+        private ILogContext LogContext => _logger.LogicalThread;
+        private readonly ILogger _logger = LogFactory.Create<NLogLogContextLayoutRenderer>();
 
         [RequiredParameter]
         [DefaultParameter]
@@ -21,10 +17,9 @@ namespace Log.It.With.NLog
 
         protected override void Append(StringBuilder builder, LogEventInfo logEvent)
         {
-            var message = _logContext.Get<object>(Key);
-            if (message != null)
+            if (LogContext.Contains(Key))
             {
-                builder.AppendFormat(logEvent.FormatProvider, message.ToString());
+                builder.AppendFormat(logEvent.FormatProvider, LogContext.Get<object>(Key).ToString());
             }
         }
     }
