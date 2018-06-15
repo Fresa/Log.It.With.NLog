@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System;
 using Should.Fluent;
 using Test.It.With.XUnit;
 using Xunit;
@@ -8,8 +8,9 @@ namespace Log.It.With.NLog.Tests
 {
     public class When_outputting_logs_to_xunit_using_the_nlog_capturer : XUnit2Specification
     {
-        private readonly ILogger _logger = LogFactory.Create<When_outputting_logs_to_xunit_using_the_nlog_capturer>();
+        private readonly ILogger _logger = LogFactory.Create();
         private OutputRecorder _outputRecorder;
+        private IDisposable _subscription;
 
         public When_outputting_logs_to_xunit_using_the_nlog_capturer(ITestOutputHelper output) : base(output)
         {
@@ -18,9 +19,7 @@ namespace Log.It.With.NLog.Tests
         protected override void Given()
         {
             _outputRecorder = new OutputRecorder(TestOutputHelper);
-            var subscription = NLogCapturer.Capture(_outputRecorder);
-
-            OnDisposing += (sender, args) => subscription.Dispose();
+            _subscription = NLogCapturer.Capture(_outputRecorder);
         }
 
         protected override void When()
@@ -39,23 +38,11 @@ namespace Log.It.With.NLog.Tests
         {
             _outputRecorder.Logs.Should().Contain.Item("Logging");
         }
-    }
 
-    internal class OutputRecorder : IOutput
-    {
-        private readonly ITestOutputHelper _testOutputHelper;
-
-        public OutputRecorder(ITestOutputHelper testOutputHelper)
+        protected override void Dispose(bool disposing)
         {
-            _testOutputHelper = testOutputHelper;
-        }
-
-        public List<string> Logs { get; } = new List<string>();
-
-        public void Write(string message)
-        {
-            Logs.Add(message);
-            _testOutputHelper.WriteLine(message);
+            _subscription.Dispose();
+            base.Dispose(disposing);
         }
     }
 }
