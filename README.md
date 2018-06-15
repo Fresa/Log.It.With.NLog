@@ -25,6 +25,9 @@ See <a href="https://github.com/Fresa/Log.It" target="_blank">Log.It</a>. To use
 ## Usage
 See <a href="https://github.com/Fresa/Log.It" target="_blank">Log.It</a>.
 
+## Logging Capturing
+If you like to capture logging during a specific context (maybe you are running multiple unit tests concurrently and would like to capture logging per test scenario), you can use `NLogCapturer`. When calling `Capture(IOutput output)` it will start monitoring and outputing log output occuring during the current capture session. It will return an `IDisposable` object which will stop the capture session when called.
+
 ## Logical Logging Context 
 `NLogLoggerFactory` uses `LogicalThreadContext` which is based on `System.Runtime.Remoting.Messaging.CallContext` to store information throughout the call context. You can also use this call context implementation if you'd like to roll your own logger factory.
 
