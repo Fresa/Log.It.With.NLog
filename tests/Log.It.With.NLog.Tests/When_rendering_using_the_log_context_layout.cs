@@ -1,14 +1,10 @@
-﻿using FakeItEasy;
-using NLog;
-using NLog.Config;
-using Should.Fluent;
-using Test.It.With.XUnit;
+﻿using Should.Fluent;
 using Xunit;
 using Xunit.Abstractions;
 
 namespace Log.It.With.NLog.Tests
 {
-    public class When_rendering_using_the_log_context_layout : XUnit2Specification
+    public class When_rendering_using_the_log_context_layout : XUnit2SpecificationWithNLog
     {
         private NLogLogger _logger;
         

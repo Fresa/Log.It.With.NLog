@@ -50,8 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IOutput.cs" />
-    <Compile Include="NLogCapturer.cs" />
     <Compile Include="NLogCapturingTarget.cs" />
     <Compile Include="NLogFactory.cs" />
     <Compile Include="NLogLogger.cs" />
