@@ -1,20 +1,22 @@
 ﻿using System.Collections.Generic;
 using NLog;
+using NLog.Layouts;
 using NLog.Targets;
 
 namespace Log.It.With.NLog.Tests
 {
-    [Target("Test")]
     public sealed class TestTarget : TargetWithLayout
     {
-        public static IReadOnlyList<string> MessagesWritten => Messages;
-        private static readonly List<string> Messages = new List<string>();
+        public IReadOnlyList<string> MessagesWritten => _messages;
+        private readonly List<string> _messages = new List<string>();
+
+        public override Layout Layout { get; set; }
 
         protected override void Write(LogEventInfo logEvent)
         {
             var logMessage = Layout.Render(logEvent);
 
-            Messages.Add(logMessage);
+            _messages.Add(logMessage);
         }
     }
 }
