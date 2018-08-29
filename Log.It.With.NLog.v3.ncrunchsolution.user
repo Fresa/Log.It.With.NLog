@@ -1,0 +1,7 @@
+﻿<SolutionConfiguration>
+  <Settings>
+    <AutoEnable>True</AutoEnable>
+    <CurrentEngineMode>Run all tests automatically [Global]</CurrentEngineMode>
+    <StatusIndicatorSplitterDistance>60</StatusIndicatorSplitterDistance>
+  </Settings>
+</SolutionConfiguration>

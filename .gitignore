@@ -6,3 +6,4 @@ tests/Log.It.With.NLog.Tests/bin/
 src/Log.It.With.NLog/bin/
 .vs/
 Log.It.With.NLog.v3.ncrunchsolution
+_NCrunch_Log.It.With.NLog/
