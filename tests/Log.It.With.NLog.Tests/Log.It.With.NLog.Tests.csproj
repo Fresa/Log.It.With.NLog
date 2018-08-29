@@ -36,8 +36,8 @@
     <Reference Include="FluentAssertions, Version=5.4.1.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\FluentAssertions.5.4.1\lib\net45\FluentAssertions.dll</HintPath>
     </Reference>
-    <Reference Include="Log.It, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Log.It.1.1.2\lib\netstandard2.0\Log.It.dll</HintPath>
+    <Reference Include="Log.It, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Log.It.2.0.0\lib\netstandard2.0\Log.It.dll</HintPath>
     </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>..\..\packages\NLog.4.5.0\lib\net45\NLog.dll</HintPath>
@@ -89,6 +89,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Given_nlog_When_logging_from_a_created_logger_without_specified_type.cs" />
     <Compile Include="Given_logical_thread_context_When_rendering_with_structured_logging.cs" />
     <Compile Include="Given_logical_thread_context_When_rendering_using_the_log_context_layout.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
