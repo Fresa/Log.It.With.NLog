@@ -1,6 +1,6 @@
 ﻿namespace Log.It.With.NLog
 {
-    public class NLogLoggerFactory : ILoggerFactory
+    public class NLogLoggerFactory
     {
         public ILogFactory Create()
         {

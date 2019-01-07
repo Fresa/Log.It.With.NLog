@@ -11,6 +11,7 @@ namespace Log.It.With.NLog.Tests
     {
         static XUnit2SpecificationWithNLog()
         {
+            LogFactory.Initialize(new NLogLoggerFactory().Create());
             LogManager.Configuration = new LoggingConfiguration();
             var nlogTarget = new NLogCapturingTarget
             {

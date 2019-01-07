@@ -1,7 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-
-namespace Log.It.With.NLog
+﻿namespace Log.It.With.NLog
 {
     public class NLogFactory : ILogFactory
     {
@@ -20,13 +17,6 @@ namespace Log.It.With.NLog
         public ILogger Create<T>()
         {
             return new NLogLogger(typeof(T).GetPrettyName(), _logContext);
-        }
-
-        [Obsolete("Will be removed in next major version.")]
-        public ILogger Create()
-        {
-            var stackTrace = new StackFrame(1, false);
-            return new NLogLogger(stackTrace.GetMethod().DeclaringType.GetPrettyName(), _logContext);
         }
     }
 }

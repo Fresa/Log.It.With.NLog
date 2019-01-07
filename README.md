@@ -9,18 +9,16 @@ Log.It.With.NLog is a simple logging framework for NLog based on <a href="https:
 https://www.nuget.org/packages/Log.It.With.NLog/1.0.0
 
 ## Getting Started
-See <a href="https://github.com/Fresa/Log.It" target="_blank">Log.It</a>. To use the supplied NLog based `ILoggerFactory` use `NLogLoggerFactory`.
+See <a href="https://github.com/Fresa/Log.It" target="_blank">Log.It</a>. To use the supplied NLog based `ILoggerFactory` use `NLogLoggerFactory` when initializing `LogFactory`.
 
-### Config File Example
-`NLogLoggerFactory`, which implements `ILoggerFactory`, can be specified as following.
-```
-<configuration>
+### ~~Config File Example~~
+~~`NLogLoggerFactory`, which implements `ILoggerFactory`, can be specified as following.~~
+~~<configuration>
   <configSections>
     <section name="Logging" type="Log.It.LoggingSection, Log.It" />
   </configSections>
   <Logging Factory="Log.It.With.NLog.NLogLoggerFactory, Log.It.With.NLog" />
-</configuration>
-```
+</configuration>~~
 
 ## Usage
 See <a href="https://github.com/Fresa/Log.It" target="_blank">Log.It</a>.
